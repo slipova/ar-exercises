@@ -14,4 +14,4 @@ puts Store.average(:annual_revenue)
 
 select_stores = Store.where("annual_revenue > 1000000")
 
-puts select_stores.count
+puts select_stores.size
