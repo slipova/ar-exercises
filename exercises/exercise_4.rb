@@ -14,10 +14,8 @@ surrey = Store.create(name: "Surrey", annual_revenue: 224000, mens_apparel: fals
 mens_stores = Store.where(mens_apparel: true)
 mens_stores.each { |mens_store| puts "#{mens_store.name} has an annual revenu of #{mens_store.annual_revenue}" }
 
-womens_stores = Store.where(womens_apparel: true)
+womens_stores = Store.where("womens_apparel = 't' AND annual_revenue < 1000000")
 womens_stores.each {
   |womens_store| 
-  if womens_store.annual_revenue < 1000000
     puts "#{womens_store.name} has an annual revenu of #{womens_store.annual_revenue}"
-  end
 }
